@@ -1,0 +1,113 @@
+/*!
+Theme Name: My Awesome WP Theme
+Theme URI: http://jonmircha.com/themes/my-awesome-wp-theme/
+Author: Jonathan MirCha
+Author URI: http://jonmircha.com/
+Description: Una breve descripción de las características que tu tema ofrece a nivel de diseño, programación y personalización. Escríbela en inglés.
+Version: 1.0.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
+Text Domain: mawt
+*/
+html {
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  background-color: #222;
+  color: greenyellow;
+  box-sizing: border-box;
+}
+
+*,
+*:after,
+*:before {
+  box-sizing: inherit;
+  padding: 0;
+  margin: 0;
+}
+
+.Header,
+.Main,
+.Footer {
+  border: thin solid greenyellow;
+  margin-bottom: 1rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.Main {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: repeat(3, auto);
+  grid-template-areas: 'wp-query wp-query'
+                                            'content sidebar'
+                                            'other sidebar';
+  grid-gap: 1rem;
+}
+
+.Main > * {
+  background-color: #CCC;
+  padding: 1rem;
+  color: #222;
+}
+
+.Content {
+  grid-area: content;
+}
+
+.Content hr {
+  border: thick dotted greenyellow;
+  margin: 3rem auto;
+  width: 80%;
+}
+
+.Sidebar {
+  grid-area: sidebar;
+}
+
+.Other {
+  grid-area: other;
+}
+
+.WP-Query {
+  grid-area: wp-query;
+}
+
+.Widget,
+.Pagination {
+  background-color: #AAA;
+  margin-bottom: 2rem;
+  padding: 1rem;
+}
+
+.Error404 {
+  font-size: 5vw;
+  font-weight: bold;
+  text-align: center;
+}
+
+.custom-logo-link img {
+  background-color: #EEE;
+  width: 100px;
+  height: auto;
+}
+
+
+/* ********** WP-Query ********** */
+.WP-Query {
+  margin: 1rem auto;
+  padding: 1rem;
+  max-width: var(--container-width);
+  background-color: var(--border-color);
+
+  display: grid;
+  grid-template-columns: repeat( auto-fit, minmax(180px, 1fr) );
+  grid-gap: 1rem;
+}
+
+.WP-Query figure {
+  text-align: center;
+}

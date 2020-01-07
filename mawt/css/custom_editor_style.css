@@ -1,0 +1,11 @@
+body#tinymce.wp-editor {
+  font-family: var(--main-font);
+}
+
+body#tinymce.wp-editor a {
+  color: var(--link-color);
+}
+
+body#tinymce.wp-editor a:hover {
+  color: var(--link-hover-color);
+}

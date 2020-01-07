@@ -1,0 +1,117 @@
+.ContactForm {
+  --form-main-font: 'Raleway', sans-serif;
+  --form-inputs-width: 80%;
+  --form-main-color: var(--main-color);
+  --form-bg-color: var(--second-color);
+  --form-text-color: #FFF;
+  --form-ok-color: #0C0;
+  --form-error-color: #C00;
+  font-family: var(--form-main-font);
+}
+
+.ContactForm textarea { resize: none; }
+
+.ContactForm > * {
+  padding: .5rem;
+  margin: 1rem auto;
+  display: block;
+  width: var(--form-inputs-width);
+}
+
+.ContactForm legend {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.ContactForm input:not([type="submit"]),
+.ContactForm textarea {
+  border: medium solid var(--form-main-color);
+  background-color: var(--form-bg-color);
+  color: var(--form-text-color);
+  font-size: 1rem;
+  font-family: var(--form-main-font);
+}
+
+.ContactForm input[type="submit"] {
+  width: calc(var(--form-inputs-width) / 2);
+  font-family: var(--form-main-font);
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--form-main-color);
+  color: var(--form-text-color);
+  cursor: pointer;
+  outline: 0;
+  border: 0;
+  transition: all .3s ease-out;
+}
+
+.ContactForm input[type="submit"]:hover {
+  background-color: var(--form-bg-color);
+  color: var(--form-main-color);
+}
+
+.ContactForm [required]::placeholder { color: var(--form-main-color); }
+
+.ContactForm [required]:valid {
+  border: thin solid var(--form-ok-color);
+  outline: thin solid var(--form-ok-color);
+}
+
+.ContactForm [required]:invalid {
+  border: thin solid var(--form-error-color);
+  outline: thin solid var(--form-error-color);
+}
+
+.ContactForm [required]:focus {
+  border: thin solid var(--form-main-color);
+  outline: thin solid var(--form-main-color);
+}
+
+.ContactForm-preload {
+  text-align: center;
+  color: var(--form-main-color);
+  transition: opacity 400ms ease-out,
+              height 400ms ease-out;
+}
+
+.ContactForm-message {
+  margin-top: -1rem;
+  padding: .5rem;
+  background-color: var(--form-bg-color);
+  color: var(--form-main-color);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  transition: opacity 400ms ease-out,
+              height 400ms ease-out;
+}
+
+.ContactForm-preload.is-active,
+.ContactForm-message.is-active {
+  height: auto;
+  opacity: 1;
+}
+
+.ContactForm-error {
+  padding: 0 .5rem;
+  font-size: .85rem;
+  background-color: var(--form-error-color);
+  color: var(--form-text-color);
+  transition: padding 800ms ease-out,
+              height 800ms ease-out,
+              opacity 800ms ease-out;
+}
+
+.ContactForm-error.is-active {
+  padding: 0 .5rem .5rem;
+  height: 1.85rem;
+  line-height: 1.85rem;
+  opacity: 1;
+}
+
+.u-hidden {
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+}
